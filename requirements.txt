@@ -1,0 +1,10 @@
+streamlit
+google.generativeai
+python-dotenv
+langchain==0.0.350
+pytube==15.0.0
+youtube_transcript_api==0.6.1
+openai
+spacy
+
+# Environment - learnflask

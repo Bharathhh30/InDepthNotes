@@ -3,7 +3,7 @@ from youtube_transcript_api import YouTubeTranscriptApi as yta
 import google.generativeai as genai
 
 # Configure Google Generative AI
-genai.configure(api_key='AIzaSyC8DM0O2D9tAI-lQNj0e1ps9S27qMeS84o')
+genai.configure(api_key='AIzaSyA7tF-Df8zdB4lyxB3oUE8eOn-18jOjTEg')
 
 # Function to convert YouTube URL to text
 def youtube_url_to_text(youtube_url):
@@ -76,71 +76,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-# experiment
-# import streamlit as st
-# from youtube_transcript_api import YouTubeTranscriptApi as yta
-# import google.generativeai as genai
-
-# # Configure Google Generative AI
-# genai.configure(api_key='YOUR_API_KEY_HERE')
-
-# # Function to convert YouTube URL to text
-# def youtube_url_to_text(youtube_url):
-#     vid_id = youtube_url.split('watch?v=')[1]
-#     try:
-#         data = yta.get_transcript(vid_id)
-#         transcript = ' '.join(seg.get('text', '') for seg in data)
-#         return transcript
-#     except Exception as e:
-#         st.error("Error retrieving transcript. Please check the provided YouTube URL or try again later.")
-#         return None
-
-# # Streamlit app
-# def main():
-#     st.title("YouTube Transcript to In-depth Notes Generator")
-
-#     # Get YouTube URL from user input
-#     youtube_url = st.text_input("Enter YouTube URL:")
-
-#     # Get keywords from user input
-#     keywords = st.text_input("Enter keywords (comma-separated):")
-
-#     # Initialize generated content variables
-#     generated_summary = None
-#     generated_notes = None
-
-#     if st.button("Generate Summary"):
-#         if youtube_url:
-#             # Convert YouTube URL to text
-#             text = youtube_url_to_text(youtube_url)
-
-#             if text:
-#                 # Use Google Generative AI to generate summary
-#                 model = genai.GenerativeModel('gemini-pro')
-#                 prompt = f"Summarize: {text}"
-#                 generated_summary = model.generate_content(prompt)
-
-#     if st.button("Generate In-depth Notes"):
-#         if youtube_url and keywords:
-#             # Convert YouTube URL to text
-#             text = youtube_url_to_text(youtube_url)
-
-#             if text:
-#                 # Use Google Generative AI to generate notes based on keywords
-#                 model = genai.GenerativeModel('gemini-pro')
-#                 prompt = f"Generate in-depth notes on: {text}\n\nKeywords: {keywords.strip()}"
-#                 generated_notes = model.generate_content(prompt)
-
-#     # Display generated content
-#     if generated_summary:
-#         st.subheader("Generated Summary:")
-#         st.markdown(generated_summary.text)
-    
-#     if generated_notes:
-#         st.subheader("Generated In-depth Notes:")
-#         st.markdown(generated_notes.text)
-
-# if __name__ == "__main__":
-#     main()
-

@@ -3,7 +3,7 @@ from youtube_transcript_api import YouTubeTranscriptApi as yta
 import google.generativeai as genai
 
 # Configure Google Generative AI
-genai.configure(api_key='AIzaSyA7tF-Df8zdB4lyxB3oUE8eOn-18jOjTEg')
+genai.configure(api_key='AIzaSyAgQT64O2p5RLsb5IIBjqSfYLkxGDyACeg')
 
 # Function to convert YouTube URL to text
 def youtube_url_to_text(youtube_url):
